@@ -2,6 +2,7 @@
   "name": "yohan-blog",
   "type": "module",
   "version": "5.4.3",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
