@@ -1,0 +1,9 @@
+name = "blog"
+compatibility_date = "2025-07-06"
+
+[build]
+command = "pnpm run build"
+watch_dir = "./src"
+
+[assets] 
+directory = "./dist"
