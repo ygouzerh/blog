@@ -142,6 +142,7 @@ runs:
 ### How to test it
 
 An often forgotten part is the testing. For that, if you are using Bash, a tool that I can recommend is bats. This will be able to quickly generate some tests for bash.
+
 Every GitHub Action should be tested. GitHub workflows, as they have many side effects, might escape that. However, having a GitHub action that is well tested... that is the key to success
 
 Here's an example of testing a GitHub Action using BATS:
@@ -474,9 +475,9 @@ In order to go beyond, if you have free time, you can implement the following as
 
 I hope this can help you make sense of how to build a reusable and easy-to-maintain CI/CD system in your organization! Some recommendations:
 
-- Start step by step, instead of changing everything in one go, even if it's tempting. I got burned many times trying to release everything perfectly the first time. Isolate the main reusable parts of your pipelines first. GitHub Actions and Workflows are quite pluggable, so you can have some quick wins first, and gradually expand it.
+Start step by step, instead of changing everything in one go, even if it's tempting. I got burned many times trying to release everything perfectly the first time. Isolate the main reusable parts of your pipelines first. GitHub Actions and Workflows are quite pluggable, so you can have some quick wins first, and gradually expand it.
 
-- Document everything. Documentation is crucial, not only for others but for yourself. This will help you when you need to fix something early in the morning, and the caffeine hasn't started kicking in yet.
+Document everything. Documentation is crucial, not only for others but for yourself. This will help you when you need to fix something early in the morning, and the caffeine hasn't started kicking in yet.
 
 Feel free to reach out if you have questions about implementing any of this - I'm always happy to chat about CI/CD architecture and the lessons learned from doing it wrong a few times first!
 
