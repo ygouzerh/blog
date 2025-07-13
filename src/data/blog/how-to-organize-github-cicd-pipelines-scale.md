@@ -4,7 +4,7 @@ author: Yohan GOUZERH
 pubDatetime: 2025-07-13T10:28:00Z
 slug: how-to-organize-github-cicd-pipelines-scale
 featured: false
-draft: true
+draft: false
 tags:
   - Github
   - CICD
@@ -220,7 +220,7 @@ esac
 2. Create one folder per action
 
 3. Add a .github folder, with a testing workflow for each action
-  - You can either have one workflow per action, with a specific trigger that will call a reusable workflow, or instead have one main workflow that will trigger the testing based on the subpath modified. (One tool that can be done to do that:)
+  - You can either have one workflow per action, with a specific trigger that will call a reusable workflow, or instead have one main workflow that will trigger the testing based on the subpath modified. (One action that can be done to do that: [dorny/paths-filter](https://github.com/dorny/paths-filter))
 
 Here's an example repository structure for organizing GitHub Actions:
 
@@ -289,7 +289,10 @@ Building in public will prevent you from creating dependencies on internal logic
 A reusable workflow is a workflow that can be called from another one. I understand that it might be hard to distinguish when to use an action, a reusable workflow, or a workflow directly.
 
 Main differentiators:
-- The main difference between actions and reusable workflows is that workflows can have jobs. Which means you can run things in parallel. Like a job to run unit tests, and another one to run e2e tests
+
+#### Actions vs Reusable Workflows
+
+The main difference between actions and reusable workflows is that workflows can have jobs. Which means you can run things in parallel. Like a job to run unit tests, and another one to run e2e tests
 
 Here's an example of a reusable workflow that runs multiple jobs in parallel:
 
@@ -369,7 +372,9 @@ jobs:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 ```
 
-- The main difference between reusable workflows and workflows is that reusable workflows don't have triggers. Triggers can only be put in workflows directly.
+#### Workflows versus Reusable Workflows
+
+The main difference between reusable workflows and workflows is that reusable workflows don't have triggers. Triggers can only be put in workflows directly.
 
 Here's an example showing the difference:
 
