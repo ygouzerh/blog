@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://yohan.gouzerh.com", // replace this with your deployed domain
   author: "Yohan Gouzerh",
   profile: "https://yohan.gouzerh.com/",
-  desc: "A technical blog regarding devops engineering, cloud computing, and software development.",
+  desc: "A technical blog regarding devops engineering, cicd, cloud and software development.",
   title: "Yohan Gouzerh's Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
