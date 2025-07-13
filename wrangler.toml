@@ -1,6 +1,10 @@
 name = "blog"
 compatibility_date = "2025-07-06"
 
+routes = [
+  { pattern = "yohan.gouzerh.com", zone_name = "gouzerh.com", custom_domain = true }
+]
+
 [build]
 command = "pnpm run build"
 watch_dir = "./src"
