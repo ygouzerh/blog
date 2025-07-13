@@ -1,7 +1,7 @@
 ---
 title: How to organize Github CI/CD Pipelines at scale
 author: Yohan GOUZERH
-pubDatetime: 2025-07-14T00:28:00Z
+pubDatetime: 2025-07-13T10:28:00Z
 slug: how-to-organize-github-cicd-pipelines-scale
 featured: false
 draft: false
