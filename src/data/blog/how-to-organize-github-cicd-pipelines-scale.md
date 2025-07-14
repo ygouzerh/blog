@@ -479,7 +479,7 @@ Start step by step, instead of changing everything in one go, even if it's tempt
 
 Document everything. Documentation is crucial, not only for others but for yourself. This will help you when you need to fix something early in the morning, and the caffeine hasn't started kicking in yet.
 
-Feel free to reach out if you have questions about implementing any of this - I'm always happy to chat about CI/CD architecture and the lessons learned from doing it wrong a few times first!
+Feel free to reach out if you have questions about implementing any of this, I'm always happy to chat about CI/CD architecture and the lessons learned from doing it wrong a few times first!
 
 
 
