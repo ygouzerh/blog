@@ -9,7 +9,7 @@ tags:
   - Github
   - CICD
 description:
-  "How to organize GitHub CI/CD pipelines at scale using reusable actions, workflows, and best practices. Avoid maintenance nightmares with proper architecture for multi-project organizations."
+  "Guidelines and good tips on how to organize and built fault-proof pipelines on Github, when managing many different repos."
 timezone: "Asia/Hong_Kong"
 ---
 
