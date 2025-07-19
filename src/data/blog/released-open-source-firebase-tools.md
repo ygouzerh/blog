@@ -1,7 +1,7 @@
 ---
 title: Released some open-source firebase tools for everyone to use
 author: Yohan GOUZERH
-pubDatetime: 2025-07-19T16:28:00Z
+pubDatetime: 2025-07-19T14:45:00Z
 slug: released-open-source-firebase-tools
 featured: false
 draft: false
