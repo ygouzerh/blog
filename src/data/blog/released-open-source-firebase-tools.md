@@ -165,6 +165,77 @@ Continuing in 5 seconds...
 Email: user@example.com
 ```
 
+## Tool n°4: Run query against firestore
+
+### Context
+I had to export some Firestore data for compliance purposes. I could have used the `export tool`, however I wanted to be able to run a few queries first in order to ensure everything was good. Unfortunately, the UI and CLI don't support running queries.
+
+I then created this small utility tool named `query-to-json` which will take a query in JSON format, and output it in JSON format.
+
+### Technical details
+
+Input:
+- I could have passed the query in another format, however JSON is quite straightforward to parse from a tool point of view
+
+Output:
+- JSON was fitting quite well, as a Firestore database is a document-oriented database
+
+### How to use it
+
+1. Write your query in a query.json file
+```json
+{
+  "where": [
+    {"field": "status", "operator": "==", "value": "active"}
+  ],
+  "select": ["email", "firstName", "surname", "walletAddress", "status"],
+  "limit": 10000
+}
+```
+2. Call the tool
+```bash
+yarn query users ./service-accounts/staging.json users-output.json --query query.json
+```
+3. Get your result in JSON format with some metadata
+```json
+{
+  "query_metadata": {
+    "collection": "users",
+    "executed_at": "2025-07-22T10:30:45.123Z",
+    "query_config": {
+      "where": [
+        {"field": "status", "operator": "==", "value": "active"}
+      ],
+      "select": ["email", "firstName", "surname", "walletAddress", "status"],
+      "limit": 10000
+    },
+    "total_documents": 156,
+    "execution_time_ms": 1234
+  },
+  "documents": [
+    {
+      "id": "user123",
+      "data": {
+        "email": "user@example.com",
+        "firstName": "John",
+        "surname": "Doe",
+        "walletAddress": "0x1234...",
+        "status": "active"
+      }
+    }
+  ]
+}
+```
+
+Then you can use jq for example to manipulate the data further if you'd like.
+
+```bash
+# Extract just email addresses
+cat users-output.json | jq -r '.documents[].data.email'
+
+# Filter by status
+cat users-output.json | jq '.documents[] | select(.data.status == "active")'
+```
 
 ## Outro
 
